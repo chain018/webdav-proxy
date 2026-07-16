@@ -14,7 +14,7 @@ function json(status, text) {
   return new Response(text, { status, headers: { 'Content-Type': 'text/plain', ...corsHeaders() } })
 }
 
-export default async function handler(req) {
+async function handler(req) {
   const url = new URL(req.url)
 
   if (url.pathname === '/api/proxy/__diag' || url.pathname === '/__diag') {
@@ -82,3 +82,6 @@ export default async function handler(req) {
   }
   return new Response(resp.body, { status: resp.status, headers: respHeaders })
 }
+
+module.exports = handler
+module.exports.default = handler
