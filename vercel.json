@@ -1,8 +1,6 @@
 {
   "framework": null,
   "functions": {
-    "api/proxy.js": {
-      "memory": 128
-    }
+    "api/proxy.js": {}
   }
 }
